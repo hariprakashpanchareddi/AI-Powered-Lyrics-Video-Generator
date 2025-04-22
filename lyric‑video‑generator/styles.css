@@ -1,0 +1,156 @@
+/* styles.css */
+body {
+  font-family: system-ui, sans-serif;
+  text-align: center;
+  background: #fafafa;
+}
+h1 {
+  margin-top: 1.5rem;
+}
+form {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 2rem 0;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Main dropzone container */
+.dropzone {
+  position: relative;
+  width: 480px;
+  height: 80px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  background: #cac7c785;
+  overflow: hidden;
+  color: #000;
+  cursor: default;
+  border: 2px solid #000;
+}
+
+/* File label area */
+.file-label {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  font-weight: bold;
+  font-size: 20px;
+  text-shadow: 1px 1px 1 rgba(0,0,0,0.5);
+  overflow: hidden;
+  max-width: 65%;
+  box-sizing: border-box;
+}
+
+/* Browse button area */
+.browse-section {
+  width: 35%;
+  min-width: 35%;
+  height: 100%;
+  background: #4294ff77;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 20px;
+  color: #000;
+  cursor: pointer;
+  border-left: 2px solid #000;
+  border-radius: 20px;
+}
+
+/* Hide the file input but make it cover only the browse section */
+.dropzone input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 35%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* Drag‑over highlight */
+.dropzone.dragover {
+  opacity: 0.8;
+}
+
+/* Filled state styling */
+.dropzone.filled {
+  background: #ff040457;
+}
+.dropzone.filled .browse-section {
+  background: #e08438;
+}
+
+.dropzone p {
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+/* Remove button styling */
+.dropzone .remove {
+  position: absolute;
+  top: 25px;
+  right: 45px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  user-select: none;
+  z-index: 20;
+}
+.dropzone .remove:hover {
+  text-shadow: 0 0 3px rgba(0,0,0,0.5);
+}
+
+.hidden {
+  display: none;
+}
+
+/* Submit button */
+button#submitBtn {
+  padding: 0.8rem 1.6rem;
+  border: none;
+  border-radius: 8px;
+  width: 250px;
+  background: #00ff2a91;
+  color: #000;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bolder;
+}
+
+/* Video name input */
+.input-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 20px;
+  font-family: inherit;
+  margin-bottom: 1rem;
+}
+.input-group label {
+  font-weight: bold;
+  flex: auto;
+  flex-grow: 1;
+  text-shadow: 1px 1px 1 rgba(0,0,0,0.5);
+}
+.input-group input[type="text"] {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1rem;
+  width: 180px;
+}

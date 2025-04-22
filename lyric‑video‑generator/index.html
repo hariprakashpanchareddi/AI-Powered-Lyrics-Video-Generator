@@ -1,0 +1,48 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lyric Video Generator</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://vjs.zencdn.net/8.10.0/video-js.css" rel="stylesheet"/>
+</head>
+<body>
+  <h1>Lyric Video Generator</h1>
+
+  <form id="uploadForm">
+    <div class="dropzone" id="audioDrop">
+      <input type="file" id="audioFile" accept="audio/*" />
+      <div class="file-label">Audio File</div>
+      <div class="browse-section">Browse</div>
+      <div class="remove hidden" title="Clear file">Remove</div>
+    </div>
+  
+    <div class="dropzone" id="lyricsDrop">
+      <input type="file" id="lyricsFile" accept=".txt,.lrc" />
+      <div class="file-label">Lyrics File</div>
+      <div class="browse-section">Browse</div>
+      <div class="remove hidden" title="Clear file">Remove</div>
+    </div>
+  
+    <!-- Video name only -->
+    <div class="input-group">
+      <label for="videoName">Video Name:</label>
+      <input type="text" id="videoName" placeholder="Enter video name" />
+    </div>
+  
+    <button type="submit" id="submitBtn">Generate Video</button>
+  </form>
+  
+  <section id="preview" class="hidden">
+    <h2>Preview</h2>
+    <video id="player" class="video-js vjs-default-skin" width="720" height="404"
+           controls preload="auto" data-setup='{"playbackRates":[0.5,1,1.5,2]}'> 
+      <track id="captionTrack" kind="captions" srclang="en" label="Lyrics" default />
+    </video>
+  </section>
+
+  <script src="https://vjs.zencdn.net/8.10.0/video.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
